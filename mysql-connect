@@ -1,0 +1,43 @@
+# 导入MySQL驱动
+import pymysql
+
+# MySQL数据配置
+mysqlconfig = {
+"user": "root",
+# 数据库密码
+"password": "?????",
+"host": "localhost",
+"port": 3306,
+# 数据库名
+"database":"?????"
+}
+
+def sample(): 
+    """
+    查询参数
+    Args:
+    Returns:
+    """
+    # 连接到MySQL数据库
+    mysql_connection = pymysql.connect(**mysqlconfig)
+    try:
+        # 创建游标(with可以更方便地自动关闭连接和游标)
+        with mysql_connection.cursor() as mysql_cursor
+            # 使用execute方法执行sql
+            mysql_cursor.execute("?????")
+            # 使用fetchall获取数据
+            result = mysql_cursor.fetchall()
+            
+            print(result)
+    finally:    
+    # 关闭连接
+    mysql_connection.close()
+
+
+# 主函数
+def main():
+    sample() 
+        
+# 入口
+if __name__ == '__main__':
+    main()
