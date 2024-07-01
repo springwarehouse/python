@@ -28,7 +28,7 @@ def sample():
             # 使用fetchall获取数据
             result = mysql_cursor.fetchall()
             
-            print(result)
+            return result
     finally:    
     # 关闭连接
     mysql_connection.close()
